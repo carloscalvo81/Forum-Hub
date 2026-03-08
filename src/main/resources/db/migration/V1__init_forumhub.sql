@@ -1,0 +1,28 @@
+-- V1__init_forumhub.sql
+
+CREATE TABLE usuarios (
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   nome VARCHAR(100) NOT NULL,
+   email VARCHAR(150) NOT NULL,
+   senha VARCHAR(255) NOT NULL,
+   ativo BOOLEAN NOT NULL DEFAULT TRUE,
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE cursos (
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   nome VARCHAR(150) NOT NULL,
+   categoria VARCHAR(100),
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE topicos (
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   titulo VARCHAR(200) NOT NULL,
+   mensagem TEXT NOT NULL,
+   data_criacao DATETIME NOT NULL,
+   status VARCHAR(50) NOT NULL,
+   autor_id BIGINT NOT NULL,
+   curso_id BIGINT NOT NULL,
+   PRIMARY KEY (id)
+);
